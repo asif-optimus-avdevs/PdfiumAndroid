@@ -4,6 +4,7 @@
 # Sets the minimum version of CMake required to build the native library.
 
 cmake_minimum_required(VERSION 3.22.1)
+set(CMAKE_CXX_STANDARD 20)
 
 # Declares and names the project.
 
@@ -64,9 +65,8 @@ target_link_libraries( # Specifies the target library.
         ${log-lib}
         ${android-lib}
         ${jnigraphics-lib}
-        )
+)
 
 
 add_library( libpdfium SHARED IMPORTED )
-
-set_target_properties( libpdfium PROPERTIES IMPORTED_LOCATION ${PROJECT_SOURCE_DIR}/../jniLibs/${ANDROID_ABI}/libpdfium.cr.so)
+set_target_properties( libpdfium PROPERTIES IMPORTED_LOCATION ${PROJECT_SOURCE_DIR}/../jniLibs/${ANDROID_ABI}/libpdfium.so)
