@@ -13,7 +13,7 @@ ext {
     ]
 }
 
-group "com.github.lion1988dev"
+group "com.github.asif-optimus-avdevs"
 
 android {
     namespace "com.shockwave.pdfium"
@@ -21,9 +21,8 @@ android {
     compileSdk rootProject.tools.compileSdk
 
     defaultConfig {
-        minSdkVersion rootProject.tools.minSdkVersion
+        minSdk = rootProject.tools.minSdk
         targetSdk rootProject.tools.targetSdk
-
         versionCode rootProject.tools.versionCode
         versionName "${rootProject.tools.versionName}"
 
@@ -31,6 +30,7 @@ android {
 
         externalNativeBuild {
             cmake {
+                arguments "-DANDROID_PLATFORM=android-21"
                 cppFlags ""
             }
         }
@@ -61,7 +61,7 @@ android {
         }
     }
 
-    ndkVersion '25.2.9519653'
+    ndkVersion '29.0.13846066'
 
     externalNativeBuild {
         cmake {
@@ -84,7 +84,7 @@ dependencies {
 publishing {
     publications {
         release(MavenPublication) {
-            groupId = 'com.github.lion1988dev'
+            groupId = 'com.github.asif-optimus-avdevs'
             artifactId = 'PdfiumAndroid'
             version = "1.9.4"
 
